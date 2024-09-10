@@ -53,12 +53,12 @@
 
     </div>
     <div class="meta center">
-      <time datetime="2024-07-30T09:39:37.000Z" itemprop="datePublished">
+      <time datetime="2024-09-10T03:29:00.000Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2024-07-30
+  2024-09-10
 </time>
 
 
@@ -87,7 +87,7 @@
     </div>
     <hr>
     
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-A-B-Problem"><span class="toc-text">1. A+B Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1000-A-B-Problem"><span class="toc-text">1000. A + B Problem</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-A-B-Problem"><span class="toc-text">1. A+B Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1000-A-B-Problem"><span class="toc-text">1000. A + B Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2"><span class="toc-text">温度转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81self"><span class="toc-text">1、self</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81celsius-float"><span class="toc-text">2、celsius:float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81-List-float"><span class="toc-text">3、-&gt;List[float]</span></a></li></ol></li></ol>
     
     <div class="picture-container">
       
@@ -100,9 +100,48 @@
 <p><em><code>try</code> 块:将那些可能会引发异常的代码放在<code>try</code>块中。如果<code>try</code>块中的代码执行时没有发生异常，那么<code>try</code>块后面的代码会继续执行。如果在<code>try</code>块中发生了异常，Python 会立即停止执行 try 块中的代码，并跳到<code>except</code>块执行。</em><br><em><code>except</code> :<code>except</code>块中的代码会在<code>try</code>块中发生异常时执行。这样，你可以在 <code>except</code>块中处理异常，执行一些清理工作或输出错误信息。如果没有在<code>try</code>块中发生异常，<code>except</code>块中的代码将不会执行。</em></p>
 <h2 id="1000-A-B-Problem"><a href="#1000-A-B-Problem" class="headerlink" title="1000. A + B Problem"></a><a target="_blank" rel="noopener" href="https://acm.ecnu.edu.cn/problem/1000/">1000. A + B Problem</a></h2><p>输入格式<br>Two integer <code>a,b</code>. Process to end of file.</p>
 <p>输出格式<br>For each case, output <code>a+b</code> in one line.<br>样例<br>Input<br>1 1<br>2 3<br>Output<br>2<br>5  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().strip().split())</span><br><span class="line">        <span class="keyword">if</span> a=b=<span class="number">0</span>: <span class="comment">#如果输入的两个均为0，那么结束程序</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="built_in">print</span>(a+b)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">```  </span><br><span class="line">_其中`strip` 去掉前后的空白字符,`split`默认以空白字符为分隔进行拆分_  </span><br><span class="line">_这里可以看出`<span class="built_in">input</span>()`函数只会识别到输入的一行，是以回车作为结束符的_   </span><br><span class="line">_而`EOFError`只捕获EOFError异常，即当遇到文档结束符(EOF)时结束_</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**对比上述两个代码，第一段可以输入任意数量的整数，且用空格分开  </span><br><span class="line">第二段代码则必须输入两个数字**   </span><br><span class="line">   </span><br><span class="line">多行输入，且第一行是行数   </span><br><span class="line">```python</span><br><span class="line"><span class="keyword">if</span> __name__ = <span class="string">&quot;__main__&quot;</span> :</span><br><span class="line">    n = <span class="built_in">int</span>(<span class="built_in">input</span>()) <span class="comment">#获取行数</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        x = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().strip().split())</span><br><span class="line">        <span class="keyword">if</span> a=b=<span class="number">0</span>: <span class="comment">#如果输入的两个均为0，那么结束程序</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="built_in">print</span>(a+b)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 
+<p><em>其中<code>strip</code> 去掉前后的空白字符,<code>split</code>默认以空白字符为分隔进行拆分</em><br><em>这里可以看出<code>input()</code>函数只会识别到输入的一行，是以回车作为结束符的</em><br><em>而<code>EOFError</code>只捕获EOFError异常，即当遇到文档结束符(EOF)时结束</em></p>
+<p><strong>对比上述两个代码，第一段可以输入任意数量的整数，且用空格分开<br>第二段代码则必须输入两个数字</strong>   </p>
+<p>多行输入，且第一行是行数   </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ = <span class="string">&quot;__main__&quot;</span> :</span><br><span class="line">    n = <span class="built_in">int</span>(<span class="built_in">input</span>()) <span class="comment">#获取行数</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        x = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br></pre></td></tr></table></figure>
 
+<h2 id="温度转换"><a href="#温度转换" class="headerlink" title="温度转换"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-the-temperature/description/?envType=study-plan-v2&envId=primers-list">温度转换</a></h2><p>输入格式：the temperature in Celsius<br>输出格式：return it as an array ans &#x3D; [kelvin, fahrenheit]<br>Note：Kelvin &#x3D; Celsius + 273.15<br>Fahrenheit &#x3D; Celsius * 1.80 + 32.00   </p>
+<pre><code class="python">class Solution:
+    def convertTemperature(self, celsius: float) -&gt; List[float]:
+        kelvin = celsius + 273.15
+        fahrenheit = celsius * 1.80 + 32.00
+        return kelvin, fahrenheit
+</code></pre>
+<p><em>首先定义了一个<code>solution</code>类,类中定义了方法<code>convertTemperature</code>,这里设置了一个参数<code>celsius</code>。</em>   </p>
+<h3 id="1、self"><a href="#1、self" class="headerlink" title="1、self"></a><em>1、<code>self</code></em></h3><p><em><code>self</code> 是 Python 类中的一个特殊关键字，用于指代类的实例。<br>在类方法中，<code>self</code>作为第一个参数，表示调用该方法的对象本身。<br>当我们定义一个类的方法时，<code>self</code>是必须的，确保方法能访问对象的属性和其他方法。<br>Note：当你在类中定义一个实例方法时，<code>Python</code>自动将调用该方法的对象作为第一个参数传递给方法，而这个参数通常被命名为<code>self</code>。你可以使用其他名字来代替<code>self</code>，但 <code>self</code>是一种惯例，用其他名字会使代码不易理解。</em><br>例子：</p>
+<pre><code class="python">class Person:
+    # 初始化方法，使用self访问实例属性
+    def __init__(self, name, age):
+        self.name = name  # 使用self来创建实例属性 name
+        self.age = age    # 使用self来创建实例属性 age
+
+    # 一个简单的方法，返回人的介绍
+    def introduce(self):
+        return f&quot;Hello, my name is &#123;self.name&#125; and I am &#123;self.age&#125; years old.&quot;
+
+    # 修改年龄的方法
+    def have_birthday(self):
+        self.age += 1  # 使用self来修改实例属性 age
+        print(f&quot;Happy Birthday &#123;self.name&#125;! You are now &#123;self.age&#125; years old.&quot;)
+
+# 创建一个Person类的实例
+person1 = Person(&quot;Alice&quot;, 30)
+
+# 调用introduce方法
+print(person1.introduce())  
+
+# 调用have_birthday方法
+person1.have_birthday()  
+</code></pre>
+<h3 id="2、celsius-float"><a href="#2、celsius-float" class="headerlink" title="2、celsius:float"></a><em>2、<code>celsius:float</code></em></h3><p><em>这是一种类型注解，用来该参数的预期类型，有助于提高代码的可读性</em>   </p>
+<h3 id="3、-List-float"><a href="#3、-List-float" class="headerlink" title="3、-&gt;List[float]"></a><em>3、<code>-&gt;List[float]</code></em></h3><p><em>同上，也是一种类型注解，表示要返回一个浮点型的列表；除此之外，<code>List</code>是<code>Python</code>中的内置数据类型（在使用之前要导入<code>typing</code>模块中的<code>List</code>）</em></p>
 
 
   </article>
