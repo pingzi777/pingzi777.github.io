@@ -10,7 +10,8 @@
   
   <title>Algorithm</title>
   <meta name="author" content="John Doe">
-  <meta name="description" content="2413最小偶倍数">
+  <meta name="description" content="2413最小偶倍数Given a positive integer n, return the smallest positive integer that is a multiple of both 2 and n.
+123456class Solution:    def smallestEve">
   
   
   <meta property="og:title" content="Algorithm"/>
@@ -89,7 +90,12 @@
     <div class="picture-container">
       
     </div>
-    <h2 id="2413最小偶倍数"><a href="#2413最小偶倍数" class="headerlink" title="2413最小偶倍数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-even-multiple/description/?envType=study-plan-v2&envId=primers-list">2413最小偶倍数</a></h2>
+    <h2 id="2413最小偶倍数"><a href="#2413最小偶倍数" class="headerlink" title="2413最小偶倍数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-even-multiple/description/?envType=study-plan-v2&envId=primers-list">2413最小偶倍数</a></h2><p>Given a positive integer <code>n</code>, return the smallest positive integer that is a multiple of both <code>2</code> and <code>n</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">smallestEvenMultiple</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">2</span> == <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> n</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> n*<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><em><strong>本身题目不难，但是重点在于怎么优化，对于奇偶问题可以通过位运算的方式来减少运算时间</strong></em><br><em><strong>对题意进行分析，如果是奇数就翻倍，即二进制左移一位；否则不变。</strong></em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> n &lt;&lt; (n &amp; <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><em>如果是<code>n</code>是奇数，那么最低有效位为<code>1</code>；如果<code>n</code>是偶数，那么最低有效位是<code>0</code>。<code>1</code>的二进制是<code>0001</code>,通过<code>n &amp; 1</code>位与运算，由此可知，<code>n</code>为奇数时，结果为<code>1</code>；<code>n</code>为偶数时，结果为<code>0</code>。所以通过<code>n &lt;&lt; (n &amp; 1)</code>来达到左移<code>0</code>位或<code>1</code>位的效果</em></p>
+
 
   </article>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
